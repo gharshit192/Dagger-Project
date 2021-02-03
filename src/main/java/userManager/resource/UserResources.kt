@@ -28,7 +28,7 @@ class UserResources @Inject constructor(
     @Consumes(MediaType.APPLICATION_JSON)
     fun addUser(request : String): Response {
         val user = userService.addUser(objectMapper.readValue(request, User::class.java))
-            return Response.ok().entity("User details already exists").build()
+            return Response.ok(user).build()
     }
     @GET
     @Path("/user/{id}")
