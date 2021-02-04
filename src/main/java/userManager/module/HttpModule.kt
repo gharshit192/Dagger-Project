@@ -5,6 +5,7 @@ import dagger.Provides
 import org.glassfish.grizzly.http.server.HttpServer
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory
 import org.glassfish.jersey.server.ResourceConfig
+import userManager.Exception.ExceptionMapper
 import userManager.resource.UserResources
 import javax.inject.Named
 import javax.ws.rs.core.UriBuilder
@@ -14,7 +15,7 @@ class HttpModule {
 
     @Provides
     fun provideResource(userResources: UserResources): ResourceConfig {
-        return ResourceConfig().register(userResources)
+        return ResourceConfig().register(userResources).register(ExceptionMapper())
     }
 
     @Provides

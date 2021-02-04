@@ -15,10 +15,11 @@ class UserService @Inject constructor(private val userRepository: UserRepository
     fun addUser(user: User): User {
         if (user.name == null || user.email == null)
             throw NullPointerException("Please Enter Name")
+        //validation if user exists with same email then thoow an exception.
         return userRepository.addUser(user)
     }
 
-    fun getUser(id : String): String {
+    fun getUser(id : String):User{
         if (id.isBlank())
             throw NullPointerException("Please Enter valid id")
         return userRepository.getUser(id)

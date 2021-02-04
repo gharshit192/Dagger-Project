@@ -1,10 +1,8 @@
 package userManager.resource
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import userManager.OccurException
 import userManager.model.User
 import userManager.service.UserService
-import java.lang.Exception
 import javax.inject.Inject
 import javax.ws.rs.*
 import javax.ws.rs.core.MediaType
@@ -15,7 +13,6 @@ class UserResources @Inject constructor(
     private val userService: UserService,
     private var objectMapper :  ObjectMapper
 ) {
-
     @GET
     @Path("/status")
     @Produces(MediaType.TEXT_PLAIN)
