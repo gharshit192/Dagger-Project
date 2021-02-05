@@ -1,4 +1,4 @@
-package userManager.Exception
+package userManager.exception
 
 import java.lang.RuntimeException
 

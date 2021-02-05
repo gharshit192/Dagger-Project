@@ -1,7 +1,7 @@
 package userManager.repository
 
-import userManager.Exception.IllegalTypeException
-import userManager.Exception.UserException
+import userManager.exception.IllegalTypeException
+import userManager.exception.UserException
 import userManager.model.User
 import javax.inject.Inject
 
